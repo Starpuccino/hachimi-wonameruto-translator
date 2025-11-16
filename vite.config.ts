@@ -19,16 +19,17 @@ export default defineConfig({
         theme_color: '#ffe0c8b3',
         background_color: '#ffe0c8b3',
         display: 'standalone',
-        start_url: '/',
+        start_url: './',
+        scope: './',
         icons: [
           {
-            src: './src/assets/favicon.png',
+            src: './assets/favicon.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: './src/assets/favicon.png',
+            src: './assets/favicon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable any',
