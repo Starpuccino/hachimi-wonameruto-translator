@@ -1,5 +1,7 @@
 <div align="center">
-	<img src="public/favicon.png" alt="哈基米南北绿豆翻译器" width="160" />
+	<a href="https://starpuccino.github.io/hachimi-wonameruto-translator/" target="_blank">
+		<img src="public/favicon.png" alt="哈基米南北绿豆翻译器" width="160" height="160" />
+	</a>
 	<h1>哈基米南北绿豆翻译器</h1>
 	<p>把人类的话编码进哈基米语，再把哈基米语解码出来。可爱、即时、可离线 ❤️</p>
 </div>
