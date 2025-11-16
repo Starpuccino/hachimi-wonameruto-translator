@@ -16,7 +16,7 @@ export default defineConfig({
     viteSingleFile(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['./assets/favicon.png'],
+      includeAssets: ['./favicon.png'],
       manifest: {
         name: '哈基米南北绿豆翻译器',
         short_name: '哈基米翻译器',
@@ -28,13 +28,13 @@ export default defineConfig({
         scope: manifestScope,
         icons: [
           {
-            src: './assets/favicon.png',
+            src: './favicon.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: './assets/favicon.png',
+            src: './favicon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable any',
