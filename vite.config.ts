@@ -3,15 +3,20 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { VitePWA } from 'vite-plugin-pwa'
 import { viteSingleFile } from 'vite-plugin-singlefile'
 
+// Resolve base path from environment for project-pages deploys.
+const basePath = process.env.BASE_PATH || '/'
+const manifestStart = basePath === '/' ? './' : basePath
+const manifestScope = basePath === '/' ? './' : basePath
+
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.BASE_PATH || '/',
+  base: basePath,
   plugins: [
     svelte(),
     viteSingleFile(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['./src/assets/favicon.png'],
+      includeAssets: ['./assets/favicon.png'],
       manifest: {
         name: '哈基米南北绿豆翻译器',
         short_name: '哈基米翻译器',
@@ -19,8 +24,8 @@ export default defineConfig({
         theme_color: '#ffe0c8b3',
         background_color: '#ffe0c8b3',
         display: 'standalone',
-        start_url: './',
-        scope: './',
+        start_url: manifestStart,
+        scope: manifestScope,
         icons: [
           {
             src: './assets/favicon.png',
