@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Hachimi cat">
+  <defs>
+    <linearGradient id="fur" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8c3ff" />
+      <stop offset="100%" stop-color="#ffd4e6" />
+    </linearGradient>
+    <linearGradient id="cheek" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#ff9ac4" />
+      <stop offset="100%" stop-color="#ffc0de" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="#fff7fb" />
+  <g transform="translate(40 60)">
+    <path
+      d="M396 116c-36-58-44-74-78-84-30 30-70 46-102 46s-72-16-102-46c-34 10-42 26-78 84-21 34-32 74-32 116 0 112 90 202 202 202s202-90 202-202c0-42-11-82-32-116z"
+      fill="url(#fur)"
+      stroke="#e39bff"
+      stroke-width="18"
+      stroke-linejoin="round"
+    />
+    <circle cx="150" cy="220" r="22" fill="#1f0f2c" />
+    <circle cx="322" cy="220" r="22" fill="#1f0f2c" />
+    <path d="M210 282c24 28 70 28 94 0" stroke="#1f0f2c" stroke-width="18" stroke-linecap="round" fill="none" />
+    <path d="M140 180l-70-26m52 70l-64 10" stroke="#f57bb6" stroke-width="16" stroke-linecap="round" />
+    <path d="M332 180l70-26m-52 70l64 10" stroke="#f57bb6" stroke-width="16" stroke-linecap="round" />
+    <ellipse cx="180" cy="260" rx="34" ry="20" fill="url(#cheek)" opacity="0.7" />
+    <ellipse cx="292" cy="260" rx="34" ry="20" fill="url(#cheek)" opacity="0.7" />
+    <path d="M236 236c0-10 8-18 18-18s18 8 18 18" stroke="#1f0f2c" stroke-width="14" stroke-linecap="round" fill="none" />
+  </g>
+</svg>

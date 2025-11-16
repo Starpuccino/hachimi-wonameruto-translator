@@ -1,0 +1,42 @@
+@use './variables' as *;
+
+// 卡片组件样式
+.hero,
+.panel,
+.history {
+  @include card-style();
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2rem;
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+
+  h1 {
+    margin: 0.35rem 0 0.45rem;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.2;
+
+    span {
+      color: $color-hachimi-strong;
+    }
+  }
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: $color-hachimi-strong;
+  margin: 0;
+}
+
+.lead {
+  margin: 0;
+  color: $color-text-muted;
+}

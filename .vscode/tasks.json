@@ -1,0 +1,92 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev - Start development server",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^.*?error.*?$",
+          "file": 1,
+          "location": 2,
+          "message": 3,
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*?VITE.*?ready.*?$",
+          "endsPattern": "^.*?\\d+ms.*?$",
+        },
+      },
+    },
+    {
+      "label": "Test - Run tests with Vitest",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "test"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true,
+      },
+    },
+    {
+      "label": "Build - Production build",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "build"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true,
+      },
+    },
+    {
+      "label": "Preview - Preview production build",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "preview"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^.*?Local:.*?$",
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*?preview.*?$",
+          "endsPattern": "^.*?Local:.*?$",
+        },
+      },
+    },
+    {
+      "label": "Format - Format code with Prettier",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "format"
+      ],
+    },
+    {
+      "label": "Check - Check TypeScript and Svelte",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "check"
+      ],
+    },
+  ],
+}

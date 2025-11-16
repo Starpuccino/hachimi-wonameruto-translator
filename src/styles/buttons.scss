@@ -1,0 +1,49 @@
+@use './variables' as *;
+
+// 按钮通用样式
+button {
+  border: none;
+  border-radius: $radius-full;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-family: inherit;
+  background: $color-white;
+  color: $color-text-muted;
+  border: $border-thin solid $color-border-purple;
+
+  @include focus-ring();
+  @include hover-lift();
+
+  &.primary {
+    @include gradient-button($color-hachimi, $color-hachimi-strong);
+
+    &.send[data-role='human'] {
+      @include gradient-button($color-human, $color-human-strong);
+    }
+
+    &.send[data-role='hachimi'] {
+      @include gradient-button($color-hachimi, $color-hachimi-strong);
+    }
+  }
+
+  &.ghost {
+    background: $color-white-alpha-85;
+    border-color: $color-border-purple-medium;
+  }
+
+  &.chip {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    background: $color-white-alpha-80;
+    color: $color-text-muted;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+}

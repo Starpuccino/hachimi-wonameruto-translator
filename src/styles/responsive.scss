@@ -1,0 +1,83 @@
+@use './variables' as *;
+
+// 响应式样式
+@include mobile {
+  main.page {
+    padding: 1.5rem 1rem 2rem;
+    gap: 1.2rem;
+  }
+
+  .live-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-tools,
+  .live-tools {
+    justify-content: flex-start;
+  }
+
+  // 编辑器在移动端的优化
+  .composer {
+    grid-template-columns: 1fr;
+  }
+
+  .shell-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .shell-actions {
+    gap: 0.5rem;
+    row-gap: 0.5rem;
+
+    button.chip {
+      flex: 0 1 auto;
+      white-space: nowrap;
+    }
+
+    .primary.send {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .copy-button {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+
+  // 历史记录气泡紧凑模式
+  .turn {
+    gap: 0.4rem;
+  }
+
+  .bubble-body {
+    gap: 0.4rem;
+  }
+
+  .bubble-body-actions {
+    margin-top: 0.4rem;
+  }
+
+  // 输入框紧凑
+  .input-shell {
+    gap: 0.4rem;
+  }
+
+  .shell-body textarea {
+    min-height: 140px;
+  }
+
+  // 按钮尺寸优化
+  button.chip {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .shell-actions button.chip {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.8rem;
+  }
+}

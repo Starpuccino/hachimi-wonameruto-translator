@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  @include gradient-bg();
+  color: $color-text;
+  font-family: $font-family;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+#app,
+main.page {
+  min-height: 100vh;
+}
+
+main.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

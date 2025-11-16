@@ -1,0 +1,118 @@
+@use './variables' as *;
+
+// 历史记录样式
+.history {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+}
+
+.history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: $color-text-muted;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.turn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bubble {
+  border-radius: $radius-md;
+  padding: 1rem 1.25rem;
+  border: $border-thin solid transparent;
+
+  @include mobile {
+    padding: 0.75rem 1rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: $color-text-muted;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  &.human {
+    background: $color-human-soft;
+    border-color: $color-human-border;
+  }
+
+  &.hachimi {
+    background: $color-hachimi-soft;
+    border-color: $color-hachimi-border;
+  }
+
+  &.reply.error {
+    border-color: $color-error-border-medium;
+    background: $color-error-bg;
+  }
+}
+
+.header-tools {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-end;
+
+  time {
+    font-size: 0.8rem;
+    color: $color-text-ghost;
+  }
+}
+
+.bubble-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bubble-body-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty {
+  margin: 0;
+  color: $color-text-faint;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cat-bike-gif {
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: middle;
+}

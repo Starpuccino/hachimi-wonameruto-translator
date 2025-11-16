@@ -1,0 +1,10 @@
+// 导入所有SCSS文件
+@use './styles/variables' as *;
+@use './styles/base';
+@use './styles/buttons';
+@use './styles/hero';
+@use './styles/panel';
+@use './styles/composer';
+@use './styles/history';
+@use './styles/footer';
+@use './styles/responsive';

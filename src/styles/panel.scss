@@ -1,0 +1,68 @@
+@use './variables' as *;
+
+// 输入面板样式
+.panel {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+
+  .cat-spider-gif {
+    height: 3rem;
+    object-fit: contain;
+    margin-left: -0.8rem;
+    margin-right: -1rem;
+    overflow: hidden;
+  }
+}
+
+.role-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle {
+  display: inline-flex;
+  padding: 0.3rem;
+  background: $color-hachimi-bg;
+  border-radius: $radius-full;
+  gap: 0.3rem;
+  transition: background-color 0.3s ease;
+  box-shadow: $shadow-sm $color-shadow-soft;
+  white-space: nowrap;
+
+  &.role-human {
+    background: $color-human-bg;
+    button {
+      &.selected {
+        color: $color-human;
+      }
+    }
+  }
+
+  &.role-hachimi {
+    background: $color-hachimi-bg;
+    button {
+      &.selected {
+        color: $color-hachimi;
+      }
+    }
+  }
+
+  button {
+    background: transparent;
+    color: $color-text-muted;
+    border: none;
+
+    &.selected {
+      background: $color-white;
+      box-shadow: $shadow-md $color-shadow-strong;
+    }
+  }
+}

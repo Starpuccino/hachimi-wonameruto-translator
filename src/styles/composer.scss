@@ -1,0 +1,120 @@
+@use './variables' as *;
+
+// 编辑器和输入框样式
+.composer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.input-shell {
+  border-radius: $radius-lg;
+  padding: 1rem;
+  background: $color-white-alpha-90;
+  border: $border-thick solid $color-border-light;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: $shadow-sm $color-shadow-medium;
+
+  &[data-role='human'] {
+    border-color: $color-human-border-light;
+    background: $color-human-bg;
+  }
+
+  &[data-role='hachimi'] {
+    border-color: $color-hachimi-border-light;
+    background: $color-hachimi-bg;
+  }
+}
+
+textarea {
+  width: 100%;
+  border-radius: $radius-sm;
+  border: $border-thick solid $color-border-soft;
+  padding: 0.9rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  background: $color-white;
+  color: inherit;
+  box-shadow: $shadow-offset-inset $color-shadow-medium;
+
+  .input-shell[data-role='human'] & {
+    border-color: $color-human-border-medium;
+  }
+
+  .input-shell[data-role='hachimi'] & {
+    border-color: $color-hachimi-border-medium;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-hachimi-strong;
+    box-shadow: inset 0 8px 18px $color-hachimi-focus-shadow;
+  }
+}
+
+.shell-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: $color-text-muted;
+
+  small {
+    font-size: 0.8rem;
+    color: $color-text-soft;
+  }
+}
+
+.shell-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.8rem;
+  overflow: hidden;
+
+  textarea {
+    width: 100%;
+    min-height: 200px;
+    flex-grow: 1;
+  }
+}
+
+.shell-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  button.chip {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.3rem;
+  }
+
+  .copy-button {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.3rem;
+
+    &[data-role='human'] {
+      @include gradient-button($color-human, $color-human-strong);
+    }
+
+    &[data-role='hachimi'] {
+      @include gradient-button($color-hachimi, $color-hachimi-strong);
+    }
+  }
+}
+
+.preview textarea[readonly] {
+  background: $color-surface-elevated;
+  color: $color-text;
+}
+
+.preview textarea.error {
+  border-color: $color-error-border;
+  color: $color-error;
+}

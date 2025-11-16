@@ -1,0 +1,147 @@
+/* 全局 SCSS 变量和基础样式 */
+
+// ========== 字体和基础排版 ==========
+$font-family:
+  'Segoe UI',
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'PingFang SC',
+  sans-serif;
+$line-height: 1.6;
+$font-weight: 400;
+
+// ========== 背景色系 ==========
+$color-bg: #fffbf5;
+$color-bg-gradient-1: rgba(255, 224, 200, 0.7);
+$color-bg-gradient-2: rgba(232, 234, 255, 0.6);
+$color-surface: rgba(255, 255, 255, 0.92);
+$color-surface-elevated: rgba(255, 255, 255, 0.95);
+
+// ========== 文本色系 ==========
+$color-text: #202230;
+$color-text-muted: #6b6e93;
+$color-text-soft: rgba(32, 34, 48, 0.65);
+$color-text-ghost: rgba(32, 34, 48, 0.55);
+$color-text-faint: rgba(32, 34, 48, 0.4);
+
+// ========== 白色系 ==========
+$color-white: #fff;
+$color-white-alpha-95: rgba(255, 255, 255, 0.95);
+$color-white-alpha-90: rgba(255, 255, 255, 0.9);
+$color-white-alpha-85: rgba(255, 255, 255, 0.85);
+$color-white-alpha-80: rgba(255, 255, 255, 0.8);
+$color-white-alpha-40: rgba(255, 255, 255, 0.4);
+
+// ========== 边框与阴影 ==========
+$color-border: rgba(245, 200, 160, 0.7);
+$color-border-light: rgba(0, 0, 0, 0.03);
+$color-border-soft: rgba(0, 0, 0, 0.04);
+$color-border-purple: rgba(245, 168, 93, 0.2);
+$color-border-purple-medium: rgba(245, 168, 93, 0.25);
+$color-shadow: rgba(240, 140, 58, 0.12);
+$color-shadow-soft: rgba(32, 34, 48, 0.05);
+$color-shadow-medium: rgba(32, 34, 48, 0.06);
+$color-shadow-strong: rgba(32, 34, 48, 0.08);
+
+// ========== 人类（紫蓝）主题 ==========
+$color-human: #7b7dce;
+$color-human-strong: #5a5dab;
+$color-human-soft: #e8eaff;
+$color-human-shadow: rgba(90, 93, 171, 0.28);
+$color-human-border: rgba(90, 93, 171, 0.4);
+$color-human-border-light: rgba(90, 93, 171, 0.25);
+$color-human-border-medium: rgba(90, 93, 171, 0.35);
+$color-human-bg: rgba(216, 218, 255, 0.35);
+
+// ========== 哈基米（橘色）主题 ==========
+$color-hachimi: #f5a85d;
+$color-hachimi-strong: #f08c3a;
+$color-hachimi-soft: #ffe8d1;
+$color-hachimi-shadow: rgba(240, 140, 58, 0.3);
+$color-hachimi-border: rgba(245, 168, 93, 0.5);
+$color-hachimi-border-light: rgba(245, 168, 93, 0.3);
+$color-hachimi-border-medium: rgba(245, 168, 93, 0.4);
+$color-hachimi-bg: rgba(255, 240, 224, 0.4);
+$color-hachimi-focus: rgba(245, 168, 93, 0.4);
+$color-hachimi-focus-shadow: rgba(245, 168, 93, 0.1);
+
+// ========== 错误色系 ==========
+$color-error: #b71c1c;
+$color-error-border: rgba(183, 28, 28, 0.45);
+$color-error-border-medium: rgba(183, 28, 28, 0.35);
+$color-error-bg: #ffe9ea;
+
+// ========== 页脚装饰 ==========
+$color-footer-border: rgba(245, 168, 93, 0.4);
+
+// ========== Breakpoints ==========
+$breakpoint-mobile: 720px;
+
+// ========== 主题设计参数 - 边框、圆角、阴影 ==========
+// 圆角半径
+$radius-xl: 28px; // 卡片
+$radius-lg: 22px; // 输入框外壳
+$radius-md: 20px; // 气泡消息
+$radius-sm: 18px; // 输入框、按钮
+$radius-full: 999px; // 完全圆形（切换按钮）
+
+// 边框粗细
+$border-thin: 1px; // 轻边框
+$border-medium: 1.5px; // 标准卡片边框
+$border-thick: 2px; // 输入框边框
+
+// 阴影深度
+$shadow-xs: 0 8px 18px;
+$shadow-sm: 0 12px 32px;
+$shadow-md: 0 20px 60px;
+
+// 阴影偏移
+$shadow-offset-inset: inset 0 8px 18px;
+
+// ========== Mixins ==========
+
+// 渐变背景
+@mixin gradient-bg(
+  $color1: $color-bg-gradient-1,
+  $color2: $color-bg-gradient-2
+) {
+  background: radial-gradient(circle at top, $color1, $color2 55%, $color-bg);
+}
+
+// 卡片样式
+@mixin card-style($bg: $color-surface, $shadow-color: $color-shadow) {
+  background: $bg;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md $shadow-color;
+  border: $border-medium solid $color-border;
+}
+
+// 渐变按钮
+@mixin gradient-button($color1, $color2) {
+  background: linear-gradient(120deg, $color1, $color2);
+  color: $color-white;
+  border: none;
+}
+
+// 移动端响应式
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// 焦点样式
+@mixin focus-ring($color: $color-hachimi-focus) {
+  &:focus-visible {
+    outline: 3px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+// 悬停效果
+@mixin hover-lift {
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+}
