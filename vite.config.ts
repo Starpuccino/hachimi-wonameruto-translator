@@ -16,7 +16,6 @@ export default defineConfig({
     viteSingleFile(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['./favicon.png'],
       manifest: {
         name: '哈基米南北绿豆翻译器',
         short_name: '哈基米翻译器',
@@ -41,8 +40,10 @@ export default defineConfig({
           },
         ],
       },
+      // Prevent duplicate precache entries for manifest icons already matched by glob patterns.
+      includeManifestIcons: false,
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
         // When navigation fails (offline), fall back to the app's index.html
         // Use manifestStart so this works when app is deployed to a subpath.
         navigateFallback: manifestStart + 'index.html',
