@@ -43,16 +43,23 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
+        // When navigation fails (offline), fall back to the app's index.html
+        // Use manifestStart so this works when app is deployed to a subpath.
+        navigateFallback: manifestStart + 'index.html',
         runtimeCaching: [
           {
-            urlPattern: ({ request }) => request.destination === 'document',
+            urlPattern: (
+              { request }: { request: { destination?: string } }
+            ) => request.destination === 'document',
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'hachimi-pages',
             },
           },
           {
-            urlPattern: ({ request }) =>
+            urlPattern: (
+              { request }: { request: { destination?: string } }
+            ) =>
               request.destination === 'style' ||
               request.destination === 'script',
             handler: 'StaleWhileRevalidate',
