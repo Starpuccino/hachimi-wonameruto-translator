@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Role } from '../types'
   import { roleCopy } from '../constants'
-  import catSpiderGif from '../assets/cat-spider.gif'
+  import hachimiSpiderGif from '../assets/hachimi-spider.gif'
 
   export let role: Role
 
@@ -24,5 +24,5 @@
       </button>
     {/each}
   </div>
-  <img src={catSpiderGif} alt="" class="cat-spider-gif" />
+  <img src={hachimiSpiderGif} alt="" class="hachimi-spider-gif" />
 </div>

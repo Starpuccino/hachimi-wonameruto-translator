@@ -1,6 +1,6 @@
 <div align="center">
 	<a href="https://starpuccino.github.io/hachimi-wonameruto-translator/" target="_blank">
-		<img src="public/favicon.png" alt="哈基米南北绿豆翻译器" width="160" height="160" />
+		<img src="public/qr.png" alt="哈基米南北绿豆翻译器" width="200" height="200" />
 	</a>
 	<h1>哈基米南北绿豆翻译器</h1>
 	<p>把人类的话编码进哈基米语，再把哈基米语解码出来。可爱、即时、可离线 ❤️</p>
@@ -9,11 +9,10 @@
 ## ✨ 功能亮点
 
 - **双角色输入**：随时切换“人类 / 哈基米”身份，一边写一边看翻译。
-- **即时对话面板**：保留每一回合的原文与译文，区分双方身份，支持一键清空。
+- **即时对话面板**：支持记录每一回合的原文与译文，区分双方身份。
 - **响应式 UI**：手机 / 平板 / 桌面均有舒适体验。
 - **隐私保护**：所有数据均在本地处理，不上传任何服务器。
-- **单文件构建**：超快开屏，无需后端支持。
-- **PWA & 离线**：支持“添加到主屏幕”，离线也能翻译。
+- **PWA & 离线**：超快开屏，支持“添加到主屏幕”，离线也能翻译。
 
 ## 🚀 快速开始
 
@@ -50,5 +49,4 @@ npm run preview
 
 ## 🐱 License
 
-MIT License，
-仅供学习与玩耍~ have fun!
+MIT License，仅供学习与玩耍~ have fun!

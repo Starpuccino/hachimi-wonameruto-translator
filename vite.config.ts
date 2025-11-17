@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { VitePWA } from 'vite-plugin-pwa'
-import { viteSingleFile } from 'vite-plugin-singlefile'
 
 // Resolve base path from environment for project-pages deploys.
 const basePath = process.env.BASE_PATH || '/'
@@ -13,7 +12,6 @@ export default defineConfig({
   base: basePath,
   plugins: [
     svelte(),
-    viteSingleFile(),
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
@@ -43,7 +41,7 @@ export default defineConfig({
       // Prevent duplicate precache entries for manifest icons already matched by glob patterns.
       includeManifestIcons: false,
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,ico,jpg,jpeg,webp,png,svg,gif}'],
         // When navigation fails (offline), fall back to the app's index.html
         // Use manifestStart so this works when app is deployed to a subpath.
         navigateFallback: manifestStart + 'index.html',
@@ -73,18 +71,14 @@ export default defineConfig({
     }),
   ],
   build: {
-    // 内联所有 CSS
+    // 内联小于 100KB 的资源（HTML、JS、CSS、图片等）
+    assetsInlineLimit: 100 * 1024,
+    // 不分离 CSS
     cssCodeSplit: false,
-    // 内联小于 50KB 的资源（SVG 图片等）
-    assetsInlineLimit: 50 * 1024,
     rollupOptions: {
       output: {
         // 内联动态导入
         inlineDynamicImports: true,
-        // 不使用 assets 目录
-        assetFileNames: 'assets/[name][extname]',
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
       },
     },
     minify: 'terser',

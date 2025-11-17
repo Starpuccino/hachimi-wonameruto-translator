@@ -4,7 +4,7 @@
   import { oppositeRole } from '../lib/hachimiTranslator'
   import { copyText } from '../utils/clipboard'
   import { formatTimestamp } from '../utils/format'
-  import catBikeGif from '../assets/cat-bike.gif'
+  import hachimiBikeGif from '../assets/hachimi-bike.gif'
 
   export let history: ChatTurn[]
   export let onClear: () => void
@@ -40,7 +40,7 @@
   </div>
   {#if history.length === 0}
     <p class="empty">还没有过南北绿豆捏~
-      <img src={catBikeGif} alt="" class="cat-bike-gif" />
+      <img src={hachimiBikeGif} alt="" class="hachimi-bike-gif" />
     </p>
   {:else}
     <ul>
